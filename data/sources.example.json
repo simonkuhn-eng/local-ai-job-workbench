@@ -1,0 +1,36 @@
+{
+  "feeds": [
+    {
+      "company": "ARX Robotics",
+      "kind": "personio",
+      "url": "https://arx-robotics.jobs.personio.de/xml",
+      "enabled": true
+    },
+    {
+      "company": "Helsing",
+      "kind": "greenhouse",
+      "url": "https://boards-api.greenhouse.io/v1/boards/helsing/jobs?content=true",
+      "enabled": true
+    },
+    {
+      "company": "Quantum Systems",
+      "kind": "greenhouse",
+      "url": "https://boards-api.greenhouse.io/v1/boards/quantumsystems/jobs?content=true",
+      "enabled": true
+    }
+  ],
+  "company_portals": [
+    {
+      "company": "ARX Robotics",
+      "url": "https://arx-robotics.jobs.personio.de"
+    },
+    {
+      "company": "Helsing",
+      "url": "https://helsing.ai/careers"
+    },
+    {
+      "company": "Quantum Systems",
+      "url": "https://quantum-systems.com/career"
+    }
+  ]
+}

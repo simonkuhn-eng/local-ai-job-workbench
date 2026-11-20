@@ -1,0 +1,246 @@
+{
+  "personal": {
+    "name": "Alex Muster",
+    "street": "Musterstraße 12",
+    "zip": "80331",
+    "city": "München",
+    "phone": "+49 170 0000000",
+    "email": "alex.muster@example.com",
+    "citizenship": "Deutschland"
+  },
+  "cv_base": {
+    "header_title": {
+      "de": "Lebenslauf",
+      "en": "CV"
+    },
+    "role_line1": {
+      "de": "Softwareentwickler",
+      "en": "Software Developer"
+    },
+    "role_line2": {
+      "de": "KI & Robotik",
+      "en": "AI & Robotics"
+    },
+    "skills": [
+      {
+        "name_de": "Python",
+        "name_en": "Python",
+        "level_de": "Sehr gut",
+        "level_en": "Proficient"
+      },
+      {
+        "name_de": "FastAPI / REST",
+        "name_en": "FastAPI / REST",
+        "level_de": "Praxis",
+        "level_en": "Practical use"
+      },
+      {
+        "name_de": "PyTorch",
+        "name_en": "PyTorch",
+        "level_de": "Praxis",
+        "level_en": "Practical use"
+      },
+      {
+        "name_de": "ROS 2",
+        "name_en": "ROS 2",
+        "level_de": "Praxis",
+        "level_en": "Practical use"
+      },
+      {
+        "name_de": "Docker / Git / CI/CD",
+        "name_en": "Docker / Git / CI/CD",
+        "level_de": "Praxis",
+        "level_en": "Practical use"
+      },
+      {
+        "name_de": "Linux",
+        "name_en": "Linux",
+        "level_de": "Gut",
+        "level_en": "Good"
+      },
+      {
+        "name_de": "TypeScript / React",
+        "name_en": "TypeScript / React",
+        "level_de": "Grundlagen",
+        "level_en": "Basics"
+      }
+    ],
+    "languages": [
+      {
+        "name_de": "Deutsch",
+        "name_en": "German",
+        "level_de": "Muttersprache",
+        "level_en": "Native"
+      },
+      {
+        "name_de": "Englisch",
+        "name_en": "English",
+        "level_de": "C1",
+        "level_en": "C1"
+      }
+    ],
+    "interests": [
+      {
+        "de": "Laufsport",
+        "en": "Running"
+      },
+      {
+        "de": "3D-Druck",
+        "en": "3D Printing"
+      }
+    ],
+    "profile": {
+      "de": "Softwareentwickler (M.Sc.) mit praktischer Erfahrung in der Entwicklung Python-basierter KI-Anwendungen, Backend-APIs und Robotiksysteme. Vertraut mit lokal betriebenen LLMs, Retrieval-Workflows, ROS 2 und containerisierten Services.",
+      "en": "Software Engineer (M.Sc.) with practical experience developing Python-based AI applications, backend APIs, and robotics software. Experienced with local LLMs, retrieval workflows, ROS 2, and containerized services."
+    },
+    "experience": [
+      {
+        "timeframe": "04/2025 - 09/2025",
+        "title_de": "Masterand -- Angewandte KI & Backend-Entwicklung",
+        "title_en": "Master's Thesis Student -- Applied AI & Backend Engineering",
+        "company": "Sample AI Systems GmbH, München",
+        "bullets_de": [
+          "Konzeption und Umsetzung einer agentischen LLM-Pipeline zur automatisierten Auswertung technischer Zeitreihendaten.",
+          "Entwicklung von Tool-Calling-Workflows und einer FastAPI-Schnittstelle inklusive Docker-Deployment."
+        ],
+        "bullets_en": [
+          "Designed and implemented an agentic LLM pipeline for automated analysis of technical time-series data.",
+          "Developed tool-calling workflows and a FastAPI interface with Docker deployment."
+        ]
+      },
+      {
+        "timeframe": "10/2023 - 03/2025",
+        "title_de": "Werkstudent -- Softwareentwicklung Robotik",
+        "title_en": "Working Student -- Robotics Software Development",
+        "company": "Example Robotics GmbH, München",
+        "bullets_de": [
+          "Entwicklung von Python- und FastAPI-Services zur Datenverarbeitung und Visualisierung.",
+          "Integration von Kamera- und LiDAR-Streams unter ROS 2 sowie Containerisierung mit Docker."
+        ],
+        "bullets_en": [
+          "Developed Python and FastAPI services for data processing and visualization.",
+          "Integrated camera and LiDAR streams under ROS 2 and containerized tooling with Docker."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "timeframe": "10/2023 - 09/2025",
+        "degree_de": "Master of Science -- Robotik & Autonome Systeme",
+        "degree_en": "Master of Science -- Robotics & Autonomous Systems",
+        "institution": "Technische Universität Musterstadt",
+        "bullets_de": [
+          {
+            "label": "Abschlussnote",
+            "text": "1,6"
+          },
+          {
+            "label": "Studienprojekt",
+            "text": "ROS-2-basierte Sensorintegration und Objektverfolgung auf Embedded-Hardware."
+          }
+        ],
+        "bullets_en": [
+          {
+            "label": "Final grade",
+            "text": "1.6 (German scale)"
+          },
+          {
+            "label": "Academic project",
+            "text": "ROS 2 sensor integration and object tracking on embedded hardware."
+          }
+        ]
+      },
+      {
+        "timeframe": "10/2019 - 09/2023",
+        "degree_de": "Bachelor of Engineering -- Mechatronik",
+        "degree_en": "Bachelor of Engineering -- Mechatronics",
+        "institution": "Hochschule Musterstadt",
+        "bullets_de": [
+          {
+            "label": "Abschlussnote",
+            "text": "1,9"
+          }
+        ],
+        "bullets_en": [
+          {
+            "label": "Final grade",
+            "text": "1.9 (German scale)"
+          }
+        ]
+      }
+    ],
+    "signature_city": "München",
+    "include_signature": false,
+    "include_portrait": false,
+    "portrait_align": "left",
+    "portrait_width": 0.75,
+    "portrait_offset_x": 0
+  },
+  "letter_defaults": {
+    "place": "München",
+    "salutation_de": "Sehr geehrte Damen und Herren,",
+    "closing_de": "Mit freundlichen Grüßen",
+    "salutation_en": "Dear Hiring Team,",
+    "closing_en": "Kind regards,",
+    "include_signature": false,
+    "signature_width_cm": 3.7
+  },
+  "ranking_profile": {
+    "search_type": "Vollzeit, Berufseinstieg mit abgeschlossenem Master (M.Sc.)",
+    "education": "M.Sc. Robotik & Autonome Systeme (1,6); B.Eng. Mechatronik (1,9)",
+    "master_completed": "2025-09-30",
+    "professional_experience": [
+      {
+        "company": "Sample AI Systems GmbH, München",
+        "from": "2025-04",
+        "to": "2025-09",
+        "type": "Masterarbeit",
+        "focus": "Agentische LLM-Pipeline, FastAPI-Backend, Docker"
+      },
+      {
+        "company": "Example Robotics GmbH, München",
+        "from": "2023-10",
+        "to": "2025-03",
+        "type": "Werkstudent",
+        "focus": "Python, FastAPI, ROS 2 Sensorintegration, Docker"
+      }
+    ],
+    "project_evidence": [
+      "ROS-2-Sensorintegration (Kamera/LiDAR) auf Embedded-Hardware",
+      "PyTorch-3D-Objekterkennung auf Punktwolken"
+    ],
+    "skill_levels": {
+      "Python": "Sehr gut",
+      "FastAPI & Backend": "Praxiserprobt",
+      "LLM / Agentic Workflows / RAG": "Gute praktische Erfahrung",
+      "ROS 2 & PyTorch": "Projekt- und Werkstudentenpraxis",
+      "Docker / Git / Linux": "Gute praktische Kenntnisse",
+      "C++": "Grundlagen mit Einarbeitungsbereitschaft"
+    },
+    "languages": {
+      "Deutsch": "Muttersprache",
+      "Englisch": "C1"
+    },
+    "interests": [
+      "KI / Machine Learning / LLM-Systeme",
+      "Robotik & autonome Systeme",
+      "Backend- und Fullstack-Entwicklung"
+    ],
+    "role_preferences": {
+      "strong_positive": [
+        "Angewandte KI-/LLM- und Softwareentwicklung (Python, FastAPI, Backend)",
+        "Robotiksysteme, Perception und Sensorintegration"
+      ],
+      "less_preferred": [
+        "Reine Seniorenrollen mit 5+ Jahren Vollzeit-Vorerfahrung"
+      ],
+      "maximum_travel_percent": 30
+    },
+    "location_priority": [
+      "1: Bayern (Raum München / Ingolstadt / Augsburg / Nürnberg / Regensburg)",
+      "2: Restliches Deutschland",
+      "3: Europa / International"
+    ],
+    "location_order_is_strict": true
+  }
+}

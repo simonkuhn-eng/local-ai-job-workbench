@@ -1,0 +1,159 @@
+\pdfgentounicode=1
+\documentclass[@@DOC_FONT_OPT@@,a4paper,english]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{xstring, xifthen}
+\usepackage{enumitem}
+\usepackage[ngerman,english]{babel}
+\usepackage{microtype}
+
+\usepackage[default]{raleway}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{fontsize}
+\usepackage{moresize}
+\usepackage{fontawesome}
+
+\newcommand{\vcenteredinclude}[1]{\begingroup
+    \setbox0=\hbox{\includegraphics{#1}}%
+    \parbox{\wd0}{\box0}\endgroup}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\newcommand*{\vcenteredhbox}[1]{\begingroup
+    \setbox0=\hbox{#1}\parbox{\wd0}{\box0}\endgroup}
+
+\newcommand{\icon}[3] {
+    \makebox(#2, #2){\textcolor{maincol}{\csname fa#1\endcsname}}
+}
+\newcommand{\icontext}[4]{
+    \vcenteredhbox{\icon{#1}{#2}{#3}}\hspace{2pt}\parbox{0.84\mpwidth}{\raggedright\textcolor{#4}{\strut #3\strut}} }
+\newcommand{\cvbullet}[1]{
+    \icontext{CaretRight}{12}{#1}{black}\\[@@INTEREST_ITEM_SPACING@@]
+}
+\newcommand{\iconhref}[5]{
+    \vcenteredhbox{\icon{#1}{#2}{#5}}\hspace{2pt}\parbox{0.84\mpwidth}{\raggedright\href{#4}{\textcolor{#5}{#3}}}
+}
+\newcommand{\iconemail}[5]{
+    \vcenteredhbox{\icon{#1}{#2}{#5}}\hspace{2pt}\parbox{0.84\mpwidth}{\raggedright\href{mailto:#4}{\textcolor{#5}{#3}}}
+}
+
+\usepackage{paracol}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{calc}
+\usepackage{atbegshi}
+\usepackage[a4paper]{geometry}
+\geometry{top=@@MARGIN_TOP@@, bottom=@@MARGIN_BOTTOM@@, left=@@MARGIN_LEFT@@, right=@@MARGIN_RIGHT@@}
+\pagestyle{empty}
+\setlength{\parindent}{0mm}
+
+\usepackage{array}
+\newcolumntype{x}[1]{>{\raggedleft\hspace{0pt}}p{#1}}
+
+\usepackage{graphicx}
+\graphicspath{{@@ASSETS_DIR@@/}}
+
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{color}
+
+\definecolor{maincol}{RGB}{@@MAIN_RGB@@}
+\definecolor{darkcol}{RGB}{@@DARK_RGB@@}
+\definecolor{lightcol}{RGB}{@@LIGHT_RGB@@}
+\definecolor{accentcol}{RGB}{@@ACCENT_RGB@@}
+
+\usepackage[hidelinks]{hyperref}
+\newcommand{\mpwidth}{\linewidth-\fboxsep-\fboxsep}
+
+\providecommand{\cvlang}{@@LANG@@}
+\newif\ifDE
+\IfStrEq{\cvlang}{de}{\DEtrue}{\DEfalse}
+\newcommand{\tr}[2]{\ifDE #2\else #1\fi}
+
+\newcommand{\cvmonthde}{%
+    \ifcase\month\or Januar\or Februar\or M\"arz\or April\or Mai\or Juni\or
+        Juli\or August\or September\or Oktober\or November\or Dezember\fi}
+\newcommand{\cvmonthen}{%
+    \ifcase\month\or January\or February\or March\or April\or May\or June\or
+        July\or August\or September\or October\or November\or December\fi}
+
+\newcommand{\cvdate}{%
+    \ifDE \number\day.\ \cvmonthde\ \number\year
+    \else \cvmonthen\ \number\day, \number\year\fi}
+
+\hyphenation{Vehicle Fahr-zeug-sicherheit}
+
+\newcommand{\cvlist}[1]{\begin{itemize}{#1}\end{itemize}}
+\newcommand{\cvtext}[1]{%
+    \par\noindent\begin{minipage}[t]{\mpwidth}\RaggedRight #1\end{minipage}\par%
+}
+\newcommand{\cvsection}[1]{
+    \vspace{@@SECTION_SPACING@@}
+    \cvtext{
+        \textbf{\Large{\textcolor{darkcol}{#1}}}\\[-5pt]
+        \textcolor{accentcol}{ \rule{0.2\textwidth}{1.5pt} }
+    }
+}
+\newcommand{\cvskill}[2]{
+    \strut\textcolor{black}{\textbf{#1}} & {\footnotesize\textcolor{maincol}{#2}}%
+}
+\newcommand{\cvevent}[4]{
+    \par\noindent
+    \parbox{\mpwidth}{
+        \begin{tabular*}{\mpwidth}{@{}>{\raggedright\arraybackslash}p{0.65\mpwidth}@{\extracolsep{\fill}}r@{}}
+            \textcolor{black}{\textbf{#2}} & \colorbox{accentcol}{\makebox[0.31\mpwidth]{\textcolor{white}{\textbf{#1}}}} \\
+            \textcolor{maincol}{#3} & \\
+        \end{tabular*}%
+        \ifthenelse{\isempty{#4}}{}{
+            \\[5pt]
+            \cvtext{#4}
+        }
+    }
+    \par\vspace{@@EVENT_SPACING@@}
+}
+
+\newcommand\Header[1]{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[accentcol]
+        (current page.north west) -- (current page.north east) --
+        ([yshift=50pt]current page.north east|-current page text area.north east) --
+        ([yshift=50pt,xshift=-3cm]current page.north|-current page text area.north) --
+        ([yshift=-4pt,xshift=-5cm]current page.north|-current page text area.north) --
+        ([yshift=-4pt]current page.north west|-current page text area.north west) -- cycle;
+        \node[font=\sffamily\bfseries\color{white},anchor=west,
+            xshift=0.7cm,yshift=-0.42cm] at (current page.north west)
+        {\fontsize{12}{12}\selectfont {#1}};
+    \end{tikzpicture}%
+}
+
+\newcommand\Footer[1]{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[lightcol]
+        (current page.south east) -- (current page.south west) --
+        ([yshift=-80pt]current page.south east|-current page text area.south east) --
+        ([yshift=-80pt,xshift=-6cm]current page.south|-current page text area.south) --
+        ([xshift=-2.5cm,yshift=-10pt]current page.south|-current page text area.south) --
+        ([yshift=-10pt]current page.south east|-current page text area.south east) -- cycle;
+    \end{tikzpicture}%
+}
+
+\begin{document}
+@@CUSTOM_FONT_SIZE@@
+\ifDE\selectlanguage{ngerman}\shorthandoff{"}\fi
+
+\columnratio{@@COLUMN_RATIO@@}
+\setlength{\columnsep}{2.2em}
+\setlength{\columnseprule}{4pt}
+\colseprulecolor{lightcol}
+
+\AtBeginShipout{\AtBeginShipoutAddToBox{\Header{@@HEADER_TITLE@@}\Footer{\thepage}}}
+
+\begin{paracol}{2}
+
+    \begin{leftcolumn}
+@@LEFT_COLUMN_CONTENT@@
+    \end{leftcolumn}
+    \begin{rightcolumn}
+@@RIGHT_COLUMN_CONTENT@@
+    \end{rightcolumn}
+\end{paracol}
+
+\end{document}
